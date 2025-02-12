@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="301.0" prefWidth="572.0" style="-fx-background-color: #b#ecf0f1#bdc3c7dc3c7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.AirTicket.controller.WelcomeController">
+   <children>
+      <ProgressBar fx:id="loading" layoutX="114.0" layoutY="275.0" prefHeight="18.0" prefWidth="363.0" progress="0.0" />
+      <ImageView fitHeight="334.0" fitWidth="572.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/images/1eba8da6c3e4af7d23c68f19c03ec392.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

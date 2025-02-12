@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.AirTicket.controller.SeatController">
+   <children>
+      <!-- Header Section -->
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #2d3436; -fx-padding: 10;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Seat Management" />
+         </children>
+      </VBox>
+
+      <!-- Main Content -->
+      <VBox layoutY="70.0" prefHeight="430.0" prefWidth="600.0" spacing="20.0" style="-fx-padding: 15; -fx-background-color: #fff;">
+         <children>
+            <!-- Seat Id Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Seat Id" />
+                  <Label fx:id="lblSeatId" style="-fx-background-color: #eaf2f8; -fx-padding: 5; -fx-border-color: #d6eaf8; -fx-border-radius: 5; -fx-background-radius: 5;" text="1" />
+               </children>
+            </HBox>
+
+            <!-- Plane Id Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Plane Id" />
+                  <ComboBox fx:id="comboPlaneId" prefWidth="200.0" promptText="Select Plane Id" style="-fx-background-color: #ffffff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Seat Class Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Seat Class" />
+                  <ComboBox fx:id="comboSeatClass" prefWidth="200.0" promptText="Select Seat Class" style="-fx-background-color: #ffffff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Availability Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Availability" />
+                  <TextField fx:id="txtAvibility" promptText="Yes" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Buttons Row -->
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Button fx:id="btnReset" onAction="#resetOnAction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5;" text="Reset" />
+                  <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 5;" text="Delete" />
+                  <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;" text="Update" />
+                  <Button fx:id="btnSave" onAction="#btnSaveOnAction" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 5;" text="Save" />
+               </children>
+            </HBox>
+
+            <!-- Table View -->
+            <TableView fx:id="tblSeat" onMouseClicked="#onClickTable" prefHeight="168.0" prefWidth="541.0" style="-fx-border-color: #ddd;" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colSeatId" prefWidth="100.0" text="Seat Id" />
+                  <TableColumn fx:id="colPlaneId" prefWidth="150.0" text="Plane Id" />
+                  <TableColumn fx:id="colSeatClass" prefWidth="150.0" text="Seat Class" />
+                  <TableColumn fx:id="colAvibilty" prefWidth="168.0" text="Availability" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

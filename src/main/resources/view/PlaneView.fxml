@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.AirTicket.controller.PlaneController">
+   <children>
+      <!-- Header Section -->
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #2d3436; -fx-padding: 10;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Plane Management" />
+         </children>
+      </VBox>
+
+      <!-- Main Content -->
+      <VBox layoutX="0.0" layoutY="70.0" prefHeight="440.0" prefWidth="600.0" spacing="20.0" style="-fx-padding: 15; -fx-background-color: #fff;">
+         <children>
+            <!-- Plane ID Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Plane Id" />
+                  <Label fx:id="lblPlaneId" prefHeight="18.0" style="-fx-background-color: #eaf2f8; -fx-padding: 5; -fx-border-color: #d6eaf8; -fx-border-radius: 5; -fx-background-radius: 5;" text="1" />
+               </children>
+            </HBox>
+
+            <!-- Plane Name Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Plane Name" />
+                  <TextField fx:id="txtPlaneName" promptText="Fly Emirates" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Flight Class Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Flight Class" />
+                  <TextField fx:id="txtClass" promptText="Business Class" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Seat Count Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Seat Count" />
+                  <TextField fx:id="txtSeatCount" promptText="54" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+
+            <!-- Buttons Row -->
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Button fx:id="btnReset" onAction="#resetOnAction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5;" text="Reset" />
+                  <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 5;" text="Delete" />
+                  <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;" text="Update" />
+                  <Button fx:id="btnSave" onAction="#btnSaveOnAction" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 5;" text="Save" />
+               </children>
+            </HBox>
+
+            <!-- Table View -->
+            <TableView fx:id="tblPlane" onMouseClicked="#onClickTable" style="-fx-border-color: #ddd;">
+               <columns>
+                  <TableColumn fx:id="colPlaneId" prefWidth="100.0" text="Plane Id" />
+                  <TableColumn fx:id="colPlaneName" prefWidth="150.0" text="Plane Name" />
+                  <TableColumn fx:id="colFlightClass" prefWidth="150.0" text="Flight Class" />
+                  <TableColumn fx:id="colSeatCount" prefWidth="168.0" text="Seat Count" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

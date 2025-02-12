@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.AirTicket.controller.PassenegerController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #2d3436; -fx-padding: 10;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Passenger Management" />
+         </children>
+      </VBox>
+      <VBox layoutX="0.0" layoutY="70.0" prefHeight="440.0" prefWidth="600.0" spacing="15.0" style="-fx-padding: 15; -fx-background-color: #fff;">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Passenger Name" />
+                  <TextField fx:id="txtPassengerName" promptText="Name" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Passenger Age" />
+                  <TextField fx:id="txtPassengerAge" promptText="20" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Passenger Mobile" />
+                  <TextField fx:id="txtPassengerMobile" promptText="077 777 7777" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefWidth="150.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Passenger Nic" />
+                  <TextField fx:id="txtPassengerNic" promptText="000000000000" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Button fx:id="btnReset" onAction="#resetOnAction" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5;" text="Reset" />
+                  <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 5;" text="Delete" />
+                  <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;" text="Update" />
+                  <Button fx:id="btnSave" onAction="#btnSaveOnAction" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 5;" text="Save" />
+               </children>
+            </HBox>
+            <TableView fx:id="tblPassenger" onMouseClicked="#onClickTable" style="-fx-border-color: #ddd;">
+               <columns>
+                  <TableColumn fx:id="colName" prefWidth="179.0" text="Name" />
+                  <TableColumn fx:id="colAge" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="colMobile" prefWidth="170.0" text="Mobile" />
+                  <TableColumn fx:id="colNic" prefWidth="144.0" text="Nic" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #c3cfe2);" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.AirTicket.controller.BookingController">
+   <children>
+      <!-- Header Section -->
+      <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #2d3436; -fx-padding: 10;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Booking Management" />
+         </children>
+      </VBox>
+
+      <!-- Main Content -->
+      <VBox layoutX="6.0" layoutY="70.0" prefHeight="417.0" prefWidth="588.0" spacing="10.0" style="-fx-padding: 15;">
+         <children>
+            <!-- Booking ID Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="100.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Booking Id" />
+                  <Label fx:id="BookingIdLbl" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #eaf2f8; -fx-padding: 5; -fx-border-color: #d6eaf8; -fx-border-radius: 5; -fx-background-radius: 5;" text="1" />
+                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Passenger" />
+                  <ComboBox fx:id="comboPassengerId" prefHeight="27.0" prefWidth="119.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5;" />
+               </children>
+            </HBox>
+            <!-- NIC and Mobile Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="NIC" />
+                  <TextField fx:id="txtNic" promptText="Enter NIC" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;" />
+                  <Label prefHeight="17.0" prefWidth="110.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Mobile Number" />
+                  <TextField fx:id="txtMobileNumber" promptText="Enter Mobile Number" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;" />
+               </children>
+            </HBox>
+            <!-- Seat ID and Plane ID Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Seat Id" />
+                  <ComboBox fx:id="comboSeatId" onAction="#comboSeatIdOnAction" prefHeight="27.0" prefWidth="97.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5;" />
+                  <Label prefHeight="17.0" prefWidth="40.0" />
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Plane" />
+                  <Label fx:id="planeLbl" prefHeight="17.0" prefWidth="161.0" />
+               </children>
+            </HBox>
+            <!-- Ticket ID and Destination Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Ticket Id" />
+                  <ComboBox fx:id="comboTicketId" onAction="#comboTicketIdOnAction" prefWidth="96.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5;" />
+                  <Label prefHeight="17.0" prefWidth="40.0" />
+                  <Label prefHeight="17.0" prefWidth="110.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Destination" />
+                  <Label fx:id="destinationLbl" prefHeight="17.0" prefWidth="161.0" />
+               </children>
+            </HBox>
+            <!-- Ticket Price and Date Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Ticket Price" />
+                  <Label fx:id="ticketPriceLbl" prefHeight="17.0" prefWidth="146.0" />
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Date" />
+                  <Label fx:id="dateLbl" prefHeight="17.0" prefWidth="161.0" />
+               </children>
+            </HBox>
+            <!-- Giving Price and Payment Method Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Giving Price" />
+                  <TextField fx:id="txtGivingPrice" onKeyTyped="#priceOnKeyTyped" promptText="Enter Giving Price" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;" />
+                  <Label prefHeight="17.0" prefWidth="110.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Payment Method" />
+                  <TextField fx:id="txtPaymentMethod" promptText="Enter Payment Method" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;" />
+               </children>
+            </HBox>
+            <!-- Balance and Payment Conductor Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Balance" />
+                  <Label fx:id="balanceLbl" prefHeight="17.0" prefWidth="146.0" />
+                  <Label prefHeight="17.0" prefWidth="110.0" style="-fx-text-fill: #333; -fx-font-size: 14px;" text="Payment Conductor" />
+                  <TextField fx:id="txtPaymentConductor" promptText="Enter Payment Conductor" style="-fx-background-color: #f9f9f9; -fx-border-color: #ced6e0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;" />
+               </children>
+            </HBox>
+            <!-- Buttons Row -->
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Button fx:id="btnReset" onAction="#btnResetOnAction" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 5;" text="Reset" />
+                  <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" style="-fx-background-color: #ff4757; -fx-text-fill: white; -fx-background-radius: 5;" text="Delete" />
+                  <Button fx:id="btnSave" onAction="#btnSaveOnAction" style="-fx-background-color: #2ed573; -fx-text-fill: white; -fx-background-radius: 5;" text="Save" />
+               </children>
+            </HBox>
+            <!-- Table View -->
+            <TableView fx:id="tblBooking">
+               <columns>
+                  <TableColumn fx:id="colBookingId" prefWidth="118.0" text="Booking Id" />
+                  <TableColumn fx:id="colPlaneId" prefWidth="101.0" text="Plane Id" />
+                  <TableColumn fx:id="colSeatId" minWidth="2.0" prefWidth="95.0" text="Seat Id" />
+                  <TableColumn fx:id="colDestination" prefWidth="129.0" text="Destination" />
+                  <TableColumn fx:id="colTicketId" prefWidth="114.0" text="Ticket Id" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
